@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Cart</string>
+
+    <string name="item_title1">Book</string>
+    <string name="item_title2">Food</string>
+    <string name="item_title4">perfume</string>
+    <string name="item_title3">Water</string>
+    <string name="item_title5">Bottle</string>
+
+    <string name="price1">100</string>
+    <string name="price2">200</string>
+    <string name="price3">150</string>
+    <string name="price4">103</string>
+    <string name="price5">10</string>
+
+    <string name="is_true">1</string>
+    <string name="is_false">0</string>
+
+</resources>
