@@ -14,24 +14,23 @@ import java.util.HashMap;
 
 public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListItemHolder> {
 
-    ArrayList<HashMap<String, Integer>> listOfItems;
-    Activity activity;
-
     private final View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             System.out.println("----Details------");
         }
     };
+    ArrayList<HashMap<String, Integer>> listOfItems;
+    Activity activity;
 
-    public ListItemAdapter(Activity activity,ArrayList<HashMap<String, Integer>> listOfItems) {
+    public ListItemAdapter(Activity activity, ArrayList<HashMap<String, Integer>> listOfItems) {
         this.listOfItems = listOfItems;
         this.activity = activity;
     }
 
     @Override
     public ListItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_home_list_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_home_list_item, parent, false);
         view.setOnClickListener(onClickListener);
         return new ListItemHolder(view);
     }
@@ -46,15 +45,15 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListIt
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Item is addded into Cart", Toast.LENGTH_SHORT).show();
-                Double priceInclusiveOfTax=0.0;
-                if (listOfItems.get(position).get("is_import") == 1) {
-                    priceInclusiveOfTax = (listOfItems.get(position).get("item_price")) * 1.05;
-                    if (listOfItems.get(position).get("is_food") == 1) {
-                        priceInclusiveOfTax = listOfItems.get(position).get("is_food") * 1.1;
+                Double priceInclusiveOfTax = Double.valueOf(activity.getResources().getString(listOfItems.get(position).get("item_price")));
+                if (activity.getResources().getString(listOfItems.get(position).get("is_import")).contentEquals("1")) {
+                    priceInclusiveOfTax += Double.valueOf(activity.getResources().getString(listOfItems.get(position).get("item_price"))) * 1.05;
+                    if (activity.getResources().getString(listOfItems.get(position).get("is_food")).contentEquals("1")) {
+                        priceInclusiveOfTax += Double.valueOf(activity.getResources().getString(listOfItems.get(position).get("is_food"))) * 1.1;
                     }
                     Toast.makeText(view.getContext(), "the price is  " + priceInclusiveOfTax, Toast.LENGTH_SHORT).show();
-                } else if (listOfItems.get(position).get("is_food") == 1) {
-                    priceInclusiveOfTax = listOfItems.get(position).get("is_food") * 1.1;
+                } else if (activity.getResources().getString(listOfItems.get(position).get("is_food")).contentEquals("1")) {
+                    priceInclusiveOfTax += Double.valueOf(activity.getResources().getString(listOfItems.get(position).get("is_food"))) * 1.1;
                 }
                 Toast.makeText(view.getContext(), "the price is  " + priceInclusiveOfTax, Toast.LENGTH_SHORT).show();
             }

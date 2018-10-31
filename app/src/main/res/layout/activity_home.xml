@@ -38,7 +38,6 @@
         android:id="@+id/recycler_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintVertical_bias=".5"
         app:layout_constraintLeft_toRightOf="@id/vertical_guideline_left"
         app:layout_constraintRight_toLeftOf="@id/vertical_guideline_right"
         app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_top"

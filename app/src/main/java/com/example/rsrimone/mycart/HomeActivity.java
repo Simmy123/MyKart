@@ -6,6 +6,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +26,10 @@ public class HomeActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemViewCacheSize(20);
+        recyclerView.setDrawingCacheEnabled(true);
+        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),1);
         recyclerView.addItemDecoration(dividerItemDecoration);
@@ -37,8 +42,8 @@ public class HomeActivity extends AppCompatActivity {
         HashMap<String,Integer> item1 = new HashMap<>();
         item1.put("item_title",R.string.item_title1);
         item1.put("item_price",R.string.price1);
-        item1.put("is_food",R.string.is_false);
-        item1.put("is_import",R.string.is_false);
+        item1.put("is_food",R.string.is_true);
+        item1.put("is_import",R.string.is_true);
         item1.put("item_image",R.drawable.book1);
         listOfItems.add(item1);
 
@@ -77,6 +82,7 @@ public class HomeActivity extends AppCompatActivity {
         HashMap<String,Integer> item6 = new HashMap<>();
         item6.put("item_title",R.string.item_title1);
         item6.put("item_price",R.string.price1);
+        item6.put("is_food",R.string.is_false);
         item6.put("item_image",R.drawable.book1);
         item6.put("is_import",R.string.is_false);
         listOfItems.add(item6);
@@ -157,6 +163,7 @@ public class HomeActivity extends AppCompatActivity {
         item16.put("item_title",R.string.item_title1);
         item16.put("item_price",R.string.price1);
         item16.put("is_food",R.string.is_false);
+        item16.put("is_import",R.string.is_false);
         item16.put("item_image",R.drawable.book1);
         listOfItems.add(item16);
     }

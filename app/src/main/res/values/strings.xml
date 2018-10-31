@@ -15,5 +15,23 @@
 
     <string name="is_true">1</string>
     <string name="is_false">0</string>
+    <string name="title_activity_add_item_page">AddItemPageActivity</string>
+    <string name="enter_the_name_of_the_product">Enter the Name of the Product</string>
+    <string name="select_item">Select Item</string>
+    <string name="select_item_type">Select Item Type</string>
+    <string name="non_import_product">Non Imported Product</string>
+    <string name="imported_item">Imported Item</string>
+    <string name="go_to_cart">Go To Cart</string>
 
+    <string-array name="select_item_dropdown">
+        <item>Books</item>
+        <item>Medicines</item>
+        <item>Pizza</item>
+        <item>Perfume</item>
+        <item>Water</item>
+        <item>Dress</item>
+        <item>Shoe</item>
+        <item>Watch</item>
+        <item>Tomato</item>
+    </string-array>
 </resources>
