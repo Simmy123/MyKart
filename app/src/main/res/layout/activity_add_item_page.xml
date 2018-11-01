@@ -94,7 +94,8 @@
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:gravity="right"
-        android:hint="1"
+        android:digits="0123456789"
+        android:imeOptions="actionDone"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/item_count_title"
         app:layout_constraintHorizontal_bias=".8"
@@ -131,6 +132,26 @@
             android:id="@+id/non_imported_item"
             android:text="@string/non_import_product"/>
     </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:text="Total Price"
+        android:id="@+id/price_title"
+        app:layout_constraintStart_toStartOf="@+id/item_type"
+        app:layout_constraintTop_toBottomOf="@+id/item_type"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:id="@+id/item_price"
+        app:layout_constraintStart_toEndOf="@id/item_type_title"
+        app:layout_constraintTop_toBottomOf="@id/item_type"
+        />
 
     <Button
         android:layout_width="wrap_content"
