@@ -6,10 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 class MyCartDisplayAdapter extends RecyclerView.Adapter<MyCartDisplayAdapter.MycartDisplayViewHolder>{
     Product product;
-    public MyCartDisplayAdapter(Product product) {
-        this.product = product;
+    List<Product> productList;
+
+    public MyCartDisplayAdapter(List<Product> productList) {
+        this.productList =productList;
     }
 
     @Override
@@ -21,14 +25,14 @@ class MyCartDisplayAdapter extends RecyclerView.Adapter<MyCartDisplayAdapter.Myc
     @Override
     public void onBindViewHolder(MyCartDisplayAdapter.MycartDisplayViewHolder holder, int position) {
             holder.productId.setText("1");
-            holder.brandName.setText(product.itemBrandName);
-            holder.itemPrice.setText(product.price.toString());
-            holder.itemType.setText(product.itemType);
+            holder.brandName.setText(productList.get(position).itemBrandName);
+            holder.itemPrice.setText(productList.get(position).price.toString());
+            holder.itemType.setText(productList.get(position).itemType);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return productList.size();
     }
     class MycartDisplayViewHolder extends RecyclerView.ViewHolder {
         TextView productId;

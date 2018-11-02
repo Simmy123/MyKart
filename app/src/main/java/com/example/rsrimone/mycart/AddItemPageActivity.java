@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
+import java.util.List;
 
 import static android.view.inputmethod.EditorInfo.IME_ACTION_DONE;
 
@@ -35,8 +36,8 @@ public class AddItemPageActivity extends Activity {
     RadioButton importedItem;
     RadioButton nonImportedItem;
     TextView itemPrice;
-    HashMap<String, String> individualProduct;
     Product product;
+    List<Product> productList;
     Gson gson;
     Double price = 0.0;
     public SharedPreferences sharedPreferences;
@@ -48,7 +49,6 @@ public class AddItemPageActivity extends Activity {
         setContentView(R.layout.activity_add_item_page);
 
         final Spinner itemName;
-        individualProduct = new HashMap<>();
 
         itemName = findViewById(R.id.select_item_spinner);
         itemBrandName = findViewById(R.id.product_brand_name);
